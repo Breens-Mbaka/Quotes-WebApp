@@ -1,5 +1,5 @@
 export class Quote {
 
-    constructor(public author: string,public publisher: string,public content: string,public datePosted: Date) {
+    constructor(public author: string,public publisher: string,public content: string,) {
     }
 }

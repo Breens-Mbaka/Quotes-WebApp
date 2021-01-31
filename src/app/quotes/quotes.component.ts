@@ -9,9 +9,9 @@ import { Quote } from '../quote'
 export class QuotesComponent implements OnInit {
 
   quotes:Quote[] = [
-    new Quote("Ryan","Breens","Pain is temporary but pride is forever",new Date()),
-    new Quote("Ryan","Breens","Pain is temporary but pride is forever",new Date()),
-    new Quote("Ryan","Breens","Pain is temporary but pride is forever",new Date())
+    new Quote("Ryan","Breens","Pain is temporary but pride is forever"),
+    new Quote("Ryan","Breens","Pain is temporary but pride is forever"),
+    new Quote("Ryan","Breens","Pain is temporary but pride is forever")
   ] 
 
   constructor() { }
