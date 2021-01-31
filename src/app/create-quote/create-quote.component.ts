@@ -7,7 +7,7 @@ import { Quote } from '../quote'
   styleUrls: ['./create-quote.component.css']
 })
 export class CreateQuoteComponent implements OnInit {
-
+  
   createQuotes = new Quote("","","")
 
   constructor() { }
