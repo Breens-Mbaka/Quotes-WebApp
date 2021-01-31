@@ -1,8 +1,9 @@
-<div>
+<div class="container">
     <li *ngFor = 'let quote of quotes'>
         Author:  {{quote.author}}
         Publisher:  {{quote.publisher}}
         Quote:  {{quote.content}}
         DatePosted:  {{quote.datePosted}}
     </li>
+    <app-create-quote></app-create-quote>
 </div>
