@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="text-center">Publish quote</h2>
     <hr>
-    <form #createQuoteForm = "ngForm">
+    <form (ngSubmit) = "publish()" #createQuoteForm = "ngForm">
         <div class="form-group">
             <label for="author">Author</label>
             <input type="text" required class="form-control" id="author" [(ngModel)] = "createQuotes.author" name="author" name ="ngModel">
