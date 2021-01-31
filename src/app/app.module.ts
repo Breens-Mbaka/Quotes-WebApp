@@ -17,6 +17,7 @@ import { CreateQuoteComponent } from './create-quote/create-quote.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

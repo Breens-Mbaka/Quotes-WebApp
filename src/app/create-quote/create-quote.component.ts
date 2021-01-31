@@ -8,7 +8,7 @@ import { Quote } from '../quote'
 })
 export class CreateQuoteComponent implements OnInit {
 
-  createQuote = new Quote("","","")
+  createQuotes = new Quote("","","")
 
   constructor() { }
 
