@@ -5,9 +5,10 @@
                 <li *ngFor = 'let quote of quotes'>
                     <div class="card" style="width: 26rem;">
                         <div class="card-body">
-                          <h5 class="card-text">Author:{{quote.author}}</h5>
-                          <p class="card-text">Publisher:{{quote.publisher}}</p>
-                          <p class="card-text">Publisher:{{quote.content}}</p>
+                          <h5 class="card-text">Author: {{quote.author}}</h5>
+                          <p class="card-text">Publisher: {{quote.publisher}}</p>
+                          <p class="card-text">Quote: {{quote.content}}</p>
+                          <app-quote-details [quote]='quote'></app-quote-details>
                         </div>
                       </div>
                 </li>
