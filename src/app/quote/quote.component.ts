@@ -17,6 +17,16 @@ export class QuoteComponent implements OnInit {
   addNewQuote(quote:Quote) {
     this.quotes.push(quote);
   }
+
+  toggleDetails(index:number){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
+
+  clearQuote(d:boolean, index:number){
+    if (d) {
+      this.quotes.splice(index,1);
+    }
+  }
   
   constructor() { }
 

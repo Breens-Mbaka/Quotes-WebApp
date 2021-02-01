@@ -2,12 +2,13 @@
     <div class="row">
         <div class="col-md-9">
             <ul>
-                <li *ngFor = 'let quote of quotes'>
+                <li *ngFor = 'let quote of quotes; let i = index'>
                     <div class="card" style="width: 24rem;">
                         <div class="card-body">
                           <p class="card-text">Publisher: {{quote.publisher}}</p>
                           <p class="card-text">Quote: {{quote.content}}</p>
-                          <app-quote-details [quote]='quote'></app-quote-details>
+                          <app-quote-details *ngIf='quote.showDescription' (delete)='clearQuote($event,i)' [quote]='quote'></app-quote-details>
+                          <button (click)='toggleDetails(i)'>More details</button>
                         </div>
                       </div>
                 </li>
