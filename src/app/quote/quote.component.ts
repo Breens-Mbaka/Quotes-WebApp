@@ -13,7 +13,11 @@ export class QuoteComponent implements OnInit {
     new Quote("breens","tom","Work hard"),
     new Quote("breens","tom","Work hard"),
     new Quote("breens","tom","Work hard"),
-  ]
+  ];
+
+  addNewQuote(quote:Quote) {
+    this.quotes.push(quote);
+  }
   constructor() { }
 
   ngOnInit(): void {
