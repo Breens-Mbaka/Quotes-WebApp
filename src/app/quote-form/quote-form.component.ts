@@ -14,7 +14,7 @@ export class QuoteFormComponent implements OnInit {
   publishQuote(){
     this.addQuote.emit(this.newQuote);
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {

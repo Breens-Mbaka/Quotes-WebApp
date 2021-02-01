@@ -1,0 +1,64 @@
+Quotes Web APP
+** USER STORIES **
+1.users create a new quote
+2.Upvote or downvote quote
+3.User can be able to delete quote
+4.See number of upvotes and downvotes for each quote
+
+** PROJECT OBJECTIVES **
+- Created using Angular CLI
+- Custom model class for quote
+- Custom directive to highlight the quote with highest upvotes
+- Should have a form component
+ * input section for the quote
+ * author
+ * Person submitting quote
+- Each quote must begin with an initial upvote and downvote value of 0
+- Component to display quote
+- Component to display quote details
+    * author of the quote
+    * votes it has
+- Custom pipe to show how much time has passed since quote was created
+
+
+Quotes
+======
+class Quote
+    upvote - number
+    downvote - number
+    author - string
+    username - string (who posted it in the website)
+    datePosted -  Date (
+        Jan 20 -> 8 days ago
+    )
+    content - string
+class Quote{
+    upvote:number
+    downvote:number
+    constructor(
+        public author: string
+        pub
+        ...
+    ){
+        this.upvote = 0;
+        this.downvote = 0;
+    }
+}
+app
+    quote component - landing page - list of quotes (parent - quote data)
+        - list of quotes -- array of quotes
+        - button for up/downvote 
+            upvote(1)
+                this.quote[index].upvote +=1
+            downvote(1)
+        - button for creating new quote
+        - button for creating a quote
+        - button for reading a quote
+    quote form component - form (Output - child to QC)
+        - create an empty quote object,
+        - populate the empty object with data from the form
+        - create an event emitter to emit the object to the parent
+        - in the parent listen for the emitter event and catch the object being emitted
+        - update your array with the new quote object
+    quote detail component - (child to the QC parent, Input)
+        content

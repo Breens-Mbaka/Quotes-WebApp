@@ -7,7 +7,7 @@
                         <div class="card-body">
                           <p class="card-text">Publisher: {{quote.publisher}}</p>
                           <p class="card-text">Quote: {{quote.content}}</p>
-                          <app-quote-details *ngIf='quote.showDescription' (delete)='clearQuote($event,i)' [quote]='quote'></app-quote-details>
+                          <app-quote-details *ngIf='quote.showDescription' (delete)='clearQuote($event,i)' [quote]='quote'></app-quote-details><br>
                           <button (click)='toggleDetails(i)'>More details</button>
                         </div>
                       </div>
