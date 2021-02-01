@@ -9,7 +9,10 @@ import { Quote } from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote("","","")
+    new Quote("breens","tom","Work hard"),
+    new Quote("breens","tom","Work hard"),
+    new Quote("breens","tom","Work hard"),
+    new Quote("breens","tom","Work hard"),
   ]
   constructor() { }
 
