@@ -19,7 +19,9 @@ h1 {
 
 button {
     text-align: center;
+    outline: none;
 }
+
 
 .card {
     margin-bottom: 20px;
