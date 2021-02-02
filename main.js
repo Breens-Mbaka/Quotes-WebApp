@@ -79,12 +79,14 @@ function QuoteComponent_li_6_Template(rf, ctx) { if (rf & 1) {
 class QuoteComponent {
     constructor() {
         this.quotes = [
-            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('When the outcome of a meeting is to have another meeting, it has been a lousy meeting.', 'Brian', "Herbert Clark"),
-            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('Wake in our breast the living fires, The holy faith that warmed our sires; Thy hand hath made our nation free; To die for her is serving Thee.', 'Thomas', "Oliver Wendell"),
-            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('In the frank expression of conflicting opinions lies the greatest promise of wisdom in governmental action.', 'Hesbon', "Louis Dembtiz"),
+            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('When the outcome of a meeting is to have another meeting, it has been a lousy meeting.', 'Brian', "Herbert Clark", new Date(2020, 1, 4)),
+            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('Wake in our breast the living fires, The holy faith that warmed our sires; Thy hand hath made our nation free; To die for her is serving Thee.', 'Thomas', "Oliver Wendell", new Date(2020, 0, 9)),
+            new _quote__WEBPACK_IMPORTED_MODULE_0__["Quote"]('In the frank expression of conflicting opinions lies the greatest promise of wisdom in governmental action.', 'Hesbon', "Louis Dembtiz", new Date(2020, 6, 8)),
         ];
     }
     addNewQuote(quote) {
+        let today = new Date();
+        quote.datePublished = new Date(today.getFullYear(), today.getMonth(), today.getDate());
         this.quotes.push(quote);
     }
     toggleDetails(index) {
@@ -164,34 +166,50 @@ const environment = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteDetailsComponent", function() { return QuoteDetailsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _day_published_pipe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../day-published.pipe */ "c3In");
+
 
 
 class QuoteDetailsComponent {
     constructor() {
         this.delete = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.clickedUpvote = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.clickedDownVote = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     deleteQuote(d) {
         this.delete.emit(d);
+    }
+    upVoteQuote(u) {
+        this.clickedUpvote.emit(u);
+    }
+    downVoteQuote(d) {
+        this.clickedDownVote.emit(d);
     }
     ngOnInit() {
     }
 }
 QuoteDetailsComponent.ɵfac = function QuoteDetailsComponent_Factory(t) { return new (t || QuoteDetailsComponent)(); };
-QuoteDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: QuoteDetailsComponent, selectors: [["app-quote-details"]], inputs: { quote: "quote" }, outputs: { delete: "delete" }, decls: 6, vars: 1, consts: [[1, "btn", "btn-success", 3, "click"]], template: function QuoteDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+QuoteDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: QuoteDetailsComponent, selectors: [["app-quote-details"]], inputs: { quote: "quote" }, outputs: { delete: "delete", clickedUpvote: "clickedUpvote", clickedDownVote: "clickedDownVote" }, decls: 9, vars: 4, consts: [[1, "btn", "btn-success", 3, "click"]], template: function QuoteDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "strong");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Author:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "button", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuoteDetailsComponent_Template_button_click_4_listener() { return ctx.deleteQuote(true); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Delete");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](6, "dayPublished");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuoteDetailsComponent_Template_button_click_7_listener() { return ctx.deleteQuote(true); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "Delete");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.quote.author, "");
-    } }, styles: ["button[_ngcontent-%COMP%] {\n    margin-bottom: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInF1b3RlLWRldGFpbHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtBQUN2QiIsImZpbGUiOiJxdW90ZS1kZXRhaWxzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b24ge1xuICAgIG1hcmdpbi1ib3R0b206IDE1cHg7XG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](6, 2, ctx.quote.datePublished), " days ago");
+    } }, pipes: [_day_published_pipe__WEBPACK_IMPORTED_MODULE_1__["DayPublishedPipe"]], styles: ["button[_ngcontent-%COMP%] {\n    margin-bottom: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInF1b3RlLWRldGFpbHMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtBQUN2QiIsImZpbGUiOiJxdW90ZS1kZXRhaWxzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJidXR0b24ge1xuICAgIG1hcmdpbi1ib3R0b206IDE1cHg7XG59Il19 */"] });
 
 
 /***/ }),
@@ -240,7 +258,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quote_quote_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./quote/quote.component */ "5+ED");
 /* harmony import */ var _quote_form_quote_form_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./quote-form/quote-form.component */ "i76H");
 /* harmony import */ var _quote_details_quote_details_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./quote-details/quote-details.component */ "Lzq5");
-/* harmony import */ var _time_published_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./time-published.pipe */ "zscc");
+/* harmony import */ var _day_published_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./day-published.pipe */ "c3In");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "fXoL");
 
 
@@ -263,9 +281,38 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector
         _quote_quote_component__WEBPACK_IMPORTED_MODULE_4__["QuoteComponent"],
         _quote_form_quote_form_component__WEBPACK_IMPORTED_MODULE_5__["QuoteFormComponent"],
         _quote_details_quote_details_component__WEBPACK_IMPORTED_MODULE_6__["QuoteDetailsComponent"],
-        _time_published_pipe__WEBPACK_IMPORTED_MODULE_7__["TimePublishedPipe"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _day_published_pipe__WEBPACK_IMPORTED_MODULE_7__["DayPublishedPipe"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"]] }); })();
+
+
+/***/ }),
+
+/***/ "c3In":
+/*!***************************************!*\
+  !*** ./src/app/day-published.pipe.ts ***!
+  \***************************************/
+/*! exports provided: DayPublishedPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DayPublishedPipe", function() { return DayPublishedPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+class DayPublishedPipe {
+    transform(value) {
+        let today = new Date();
+        let todayWithNoTime = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        var dateDifference = Math.abs(value - todayWithNoTime);
+        const secondsInDay = 86400;
+        var dateDifferenceSeconds = dateDifference * 0.001;
+        var dayCounter = dateDifferenceSeconds / secondsInDay;
+        return dayCounter;
+    }
+}
+DayPublishedPipe.ɵfac = function DayPublishedPipe_Factory(t) { return new (t || DayPublishedPipe)(); };
+DayPublishedPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "dayPublished", type: DayPublishedPipe, pure: true });
 
 
 /***/ }),
@@ -289,7 +336,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class QuoteFormComponent {
     constructor() {
-        this.newQuote = new _quote__WEBPACK_IMPORTED_MODULE_1__["Quote"]("", "", "");
+        this.newQuote = new _quote__WEBPACK_IMPORTED_MODULE_1__["Quote"]("", "", "", new Date());
         this.addQuote = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     publishQuote() {
@@ -386,10 +433,11 @@ AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineI
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Quote", function() { return Quote; });
 class Quote {
-    constructor(content, publisher, author) {
+    constructor(content, publisher, author, datePublished) {
         this.content = content;
         this.publisher = publisher;
         this.author = author;
+        this.datePublished = datePublished;
         this.showDescription = false;
     }
 }
@@ -443,31 +491,6 @@ webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
 webpackEmptyAsyncContext.id = "zn8P";
-
-/***/ }),
-
-/***/ "zscc":
-/*!****************************************!*\
-  !*** ./src/app/time-published.pipe.ts ***!
-  \****************************************/
-/*! exports provided: TimePublishedPipe */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimePublishedPipe", function() { return TimePublishedPipe; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-class TimePublishedPipe {
-    transform(value) {
-        let today = new Date(); //get current date and time
-        let timeToday = new Date(today.getHours(), today.getMinutes());
-        return timeToday;
-    }
-}
-TimePublishedPipe.ɵfac = function TimePublishedPipe_Factory(t) { return new (t || TimePublishedPipe)(); };
-TimePublishedPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "timePublished", type: TimePublishedPipe, pure: true });
-
 
 /***/ })
 
