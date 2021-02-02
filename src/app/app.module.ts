@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
-import { TimePublishedPipe } from './time-published.pipe';
-import { VoteComponent } from './vote/vote.component';
+import { DayPublishedPipe } from './day-published.pipe';
+
 
 
 @NgModule({
@@ -17,8 +17,7 @@ import { VoteComponent } from './vote/vote.component';
     QuoteComponent,
     QuoteFormComponent,
     QuoteDetailsComponent,
-    TimePublishedPipe,
-    VoteComponent,
+    DayPublishedPipe,
   ],
   imports: [
     BrowserModule,

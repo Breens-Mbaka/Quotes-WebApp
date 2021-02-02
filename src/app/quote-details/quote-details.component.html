@@ -1,2 +1,3 @@
 <p><strong>Author:</strong> {{quote.author}}</p>
+<p>{{ quote.datePublished | dayPublished }} days ago</p>
 <button (click)= 'deleteQuote(true)' class="btn btn-success">Delete</button>

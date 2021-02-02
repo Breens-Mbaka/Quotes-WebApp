@@ -10,9 +10,19 @@ export class QuoteDetailsComponent implements OnInit {
   
   @Input() quote!: Quote;
   @Output() delete = new EventEmitter<boolean>();
+  @Output() clickedUpvote = new EventEmitter<boolean>();
+  @Output() clickedDownVote = new EventEmitter<boolean>();
 
   deleteQuote(d:boolean){
     this.delete.emit(d);
+  }
+
+  upVoteQuote(u:boolean) {
+    this.clickedUpvote.emit(u);
+  }
+
+  downVoteQuote(d:boolean) {
+    this.clickedDownVote.emit(d);
   }
 
   constructor() {
