@@ -8,6 +8,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { TimePublishedPipe } from './time-published.pipe';
+import { VoteComponent } from './vote/vote.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TimePublishedPipe } from './time-published.pipe';
     QuoteFormComponent,
     QuoteDetailsComponent,
     TimePublishedPipe,
+    VoteComponent,
   ],
   imports: [
     BrowserModule,
