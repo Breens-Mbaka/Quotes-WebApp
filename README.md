@@ -1,14 +1,27 @@
-# QuotesWebApp
+# Project name
+> Quotes-WebApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+# Project description
+This is a web app where you can see quotes from other people and you can also create yours.You also have the ability to upvote or downvote a quote
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` to run the dev server and navigate to the localhost automatically
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Technologies
+* HTML/CSS
+* Typescript
+* Angular
+* Bootstrap
+
+## Live site
+Live [site](https://breens-mbaka.github.io/Quotes-WebApp/)
+
 
 ## Build
 
@@ -21,6 +34,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Status
+Project is: _in progress_
 
 ## Further help
 
