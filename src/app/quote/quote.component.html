@@ -1,20 +1,21 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <ul>
-                <li *ngFor = 'let quote of quotes; let i = index'>
+                <h1>Latest Quotes</h1>
+                <li *ngFor = 'let quote of quotes; let i = index' quotes>
                     <div class="card" style="width: 24rem;">
                         <div class="card-body">
                           <p class="card-text">Publisher: {{quote.publisher}}</p>
                           <p class="card-text">Quote: {{quote.content}}</p>
                           <app-quote-details *ngIf='quote.showDescription' (delete)='clearQuote($event,i)' [quote]='quote'></app-quote-details><br>
-                          <button (click)='toggleDetails(i)'>More details</button>
+                          <button (click)='toggleDetails(i)' class="btn btn-info">More details</button>
                         </div>
                       </div>
                 </li>
             </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>

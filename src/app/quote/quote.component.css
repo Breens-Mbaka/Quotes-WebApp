@@ -1,3 +1,30 @@
 ul li {
     list-style: none;
 }
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.quotes {
+    margin-top: 50px;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: blue;
+}
+
+button {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-text {
+    line-height: 1.8rem;
+}
