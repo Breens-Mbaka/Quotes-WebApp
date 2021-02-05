@@ -8,7 +8,6 @@ import { QuoteComponent } from './quote/quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { DayPublishedPipe } from './day-published.pipe';
-import { VoteComponent } from './vote/vote.component';
 
 
 
@@ -19,7 +18,6 @@ import { VoteComponent } from './vote/vote.component';
     QuoteFormComponent,
     QuoteDetailsComponent,
     DayPublishedPipe,
-    VoteComponent,
   ],
   imports: [
     BrowserModule,
