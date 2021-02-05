@@ -15,6 +15,7 @@ export class QuoteFormComponent implements OnInit {
 
   publishQuote(){
     this.addQuote.emit(this.newQuote);
+    this.newQuote = new Quote("", '', '', new Date());
 };
 
   resetForm(quoteForm: NgForm){
