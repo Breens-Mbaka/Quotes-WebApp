@@ -521,7 +521,7 @@ class Quote {
         this.datePublished = datePublished;
         this.showDescription = false;
         this.upvotes = 0;
-        this.downvotes = 10;
+        this.downvotes = 0;
     }
 }
 
