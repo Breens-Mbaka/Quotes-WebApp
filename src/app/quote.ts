@@ -1,6 +1,7 @@
 export class Quote {
     showDescription: boolean;
-    votes: number;
+    upvotes: number;
+    downvotes: number;
     constructor(
     public content:string,
     public publisher:string,
@@ -8,6 +9,7 @@ export class Quote {
     public datePublished:Date
     ) {
         this.showDescription = false;
-        this.votes = 0;
+        this.upvotes =  0;
+        this.downvotes = 10;
     }
 }

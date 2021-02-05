@@ -11,9 +11,16 @@
                           <app-quote-details *ngIf='quote.showDescription' (delete)='clearQuote($event,i)' [quote]='quote'></app-quote-details><br>
                           <button (click)='toggleDetails(i)' class="btn btn-info">More details</button>
                           <br><br>
-                          <img src="assets/up-arrow.png" alt="" (click)="upVote(i)">
-                          <span>{{quote.votes}}</span>
-                          <img src="assets/down-arrow.png" alt="" (click)="downVote(i)">
+                          <div class="row">
+                            <div class="col-md-6 upvotes">
+                                <img src="assets/up-arrow.png" alt="" (click)="upVote(i)">
+                                <span >{{quote.upvotes}}</span>
+                            </div>
+                            <div class="col-md-6 downvotes">
+                                <img src="assets/down-arrow.png" alt="" (click)="downVote(i)">
+                                <span >{{quote.downvotes}}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                 </li>
