@@ -1,3 +1,11 @@
 button {
     margin-bottom: 15px;
 }
+
+#quotes {
+    font-size: 20px;
+}
+
+#author {
+    font-family: 'Pacifico', cursive;
+}

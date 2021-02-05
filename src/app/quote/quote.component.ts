@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ɵangular_packages_forms_forms_q } from '@angular/forms';
 import { Quote } from '../quote'
 
 @Component({
@@ -34,6 +35,14 @@ export class QuoteComponent implements OnInit {
     }
   }
   
+  upVote(index:number) {
+      this.quotes[index].votes += 1;
+  }
+
+  downVote(index:number) {
+    this.quotes[index].votes -= 1;
+}
+
   constructor() { }
 
   ngOnInit(): void {

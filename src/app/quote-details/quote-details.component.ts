@@ -17,14 +17,6 @@ export class QuoteDetailsComponent implements OnInit {
     this.delete.emit(d);
   }
 
-  upVoteQuote(u:boolean) {
-    this.clickedUpvote.emit(u);
-  }
-
-  downVoteQuote(d:boolean) {
-    this.clickedDownVote.emit(d);
-  }
-
   constructor() {
   }
 
