@@ -116,6 +116,8 @@ class QuoteComponent {
     downVote(index) {
         this.quotes[index].votes -= 1;
     }
+    highestQuote() {
+    }
     ngOnInit() {
     }
 }
@@ -366,11 +368,16 @@ class QuoteFormComponent {
     publishQuote() {
         this.addQuote.emit(this.newQuote);
     }
+    ;
+    resetForm(quoteForm) {
+        quoteForm.reset();
+    }
     ngOnInit() {
     }
 }
 QuoteFormComponent.ɵfac = function QuoteFormComponent_Factory(t) { return new (t || QuoteFormComponent)(); };
-QuoteFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: QuoteFormComponent, selectors: [["app-quote-form"]], outputs: { addQuote: "addQuote" }, decls: 24, vars: 3, consts: [[1, "container-fluid"], [1, "text-center"], [3, "ngSubmit"], ["quoteForm", "ngForm"], [1, "form-group"], ["for", "author"], ["type", "text", "required", "", "id", "author", "name", "author", 1, "form-control", 3, "ngModel", "ngModelChange"], ["author", "ngModel"], ["for", "publisher"], ["type", "text", "required", "", "id", "publisher", "name", "publisher", 1, "form-control", 3, "ngModel", "ngModelChange"], ["publisher", "ngModel"], ["for", "content"], ["id", "content", "rows", "4", "name", "content", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["content", "ngModel"], ["type", "submit", 1, "btn", "btn-success"]], template: function QuoteFormComponent_Template(rf, ctx) { if (rf & 1) {
+QuoteFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: QuoteFormComponent, selectors: [["app-quote-form"]], outputs: { addQuote: "addQuote" }, decls: 27, vars: 3, consts: [[1, "container-fluid"], [1, "text-center"], [3, "ngSubmit"], ["quoteForm", "ngForm"], [1, "form-group"], ["for", "author"], ["type", "text", "required", "", "id", "author", "name", "author", 1, "form-control", 3, "ngModel", "ngModelChange"], ["author", "ngModel"], ["for", "publisher"], ["type", "text", "required", "", "id", "publisher", "name", "publisher", 1, "form-control", 3, "ngModel", "ngModelChange"], ["publisher", "ngModel"], ["for", "content"], ["id", "content", "rows", "4", "name", "content", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["content", "ngModel"], ["type", "submit", 1, "btn", "btn-success"], ["type", "submit", 1, "btn", "btn-success", 3, "click"]], template: function QuoteFormComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Publish Quote");
@@ -406,6 +413,12 @@ QuoteFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "button", 14);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Publish");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "button", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function QuoteFormComponent_Template_button_click_25_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5); return ctx.resetForm(_r0); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, "Reset");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
