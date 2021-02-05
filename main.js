@@ -384,6 +384,7 @@ class QuoteFormComponent {
     }
     publishQuote() {
         this.addQuote.emit(this.newQuote);
+        this.newQuote = new _quote__WEBPACK_IMPORTED_MODULE_1__["Quote"]("", "", "", new Date());
     }
     ;
     resetForm(quoteForm) {
