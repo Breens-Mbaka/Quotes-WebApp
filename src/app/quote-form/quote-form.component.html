@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h1 class="text-center">Publish Quote</h1>
     <hr>
-    <form (ngSubmit)='publishQuote()' #quoteForm='ngForm'>
+    <form (ngSubmit)='publishQuote();' #quoteForm='ngForm'>
         <div class="form-group">
   
             <label for="author">Author</label>
@@ -27,4 +27,7 @@
             <button type="submit" class="btn btn-success">Publish</button>
         </div>
     </form>
+    <div class="form-group">
+        <button type="submit" (click)="resetForm(quoteForm)"class="btn btn-success">Reset</button>
+    </div>
   </div>

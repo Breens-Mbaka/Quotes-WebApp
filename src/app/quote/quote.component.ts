@@ -43,6 +43,10 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].votes -= 1;
 }
 
+  highestQuote() {
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
